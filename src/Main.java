@@ -15,7 +15,6 @@ public class Main {
         short short16hex4_1 = (short) 0xA304;
 
         byte[] bytesArray = {(byte) 0xB1, 0x02, (byte) 0xA3, 0x04, (byte) 0xFF, 0x11, (byte) 0xEF, 0x4F};
-        short[] shortsArray = {(short) 0xB102, (short) 0xA304, (short) 0xFF11};
 
         String hexString = "9803CDEF9800000343";
         String[] hexStringArray = {"9803CDEF","98000003","96FF3322"};
@@ -32,11 +31,22 @@ public class Main {
 
 
         System.out.println("\n\n-------------------------------");
-        System.out.println("Origin Data : 0xB102, 0xA304;");
+        System.out.println("Origin Data : 0xB102, 0xA304");
         System.out.println("-------------------------------");
         System.out.println("shortToByteBuffer");
         for(byte bytes : shortToByteBuffer(short16hex4_0, short16hex4_1)){
             System.out.printf("0x%02X ", bytes);
+        }
+
+        System.out.println("\n\n-------------------------------");
+        System.out.println("Origin Data : {0xB1, 0x02, 0xA3, 0x04, 0xFF, 0x11, 0xEF, 0x4F}");
+        System.out.println("-------------------------------");
+        System.out.println("byteArrayToHexString");
+            System.out.println(String.format("0x%s", byteArrayToHexString(bytesArray)));
+        System.out.println("-------------------------------");
+        System.out.println("byteArrayToHexStringArray");
+        for(String strings : byteArrayToHexStringArray(bytesArray)){
+            System.out.printf(String.format("0x%s ", strings));
         }
 
 
@@ -156,19 +166,6 @@ public class Main {
         return dataByte;
     }
 
-    public static byte[] hexStringArrayToByte8bit2HexArray(String[] sArray){
-        int len = sArray.length;
-        byte[] dataByte = new byte[len * 4];
-
-        for(int i = 0; i < sArray.length; i++) {
-            for(int j = 0 ; j < sArray[0].length()/2; j++){
-                dataByte[i*4 + j] = hexStringToByte8bit2HexArray(sArray[i])[j];
-            }
-        }
-
-        return dataByte;
-    }
-
     public static short[] hexStringToShort16bit4HexArray(String s) {
         int len = s.length();
         byte[] dataByte;
@@ -204,6 +201,23 @@ public class Main {
         }
 
         return dataInt;
+    }
+
+    /*
+     *  String Array => byte Array or int Array
+     */
+
+    public static byte[] hexStringArrayToByte8bit2HexArray(String[] sArray){
+        int len = sArray.length;
+        byte[] dataByte = new byte[len * 4];
+
+        for(int i = 0; i < sArray.length; i++) {
+            for(int j = 0 ; j < sArray[0].length()/2; j++){
+                dataByte[i*4 + j] = hexStringToByte8bit2HexArray(sArray[i])[j];
+            }
+        }
+
+        return dataByte;
     }
 
 
