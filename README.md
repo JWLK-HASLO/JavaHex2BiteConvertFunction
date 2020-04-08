@@ -1,6 +1,7 @@
 JavaHex2BiteConvertFunction
 ===
-#### Convert Hex number between byte, short, int, string
+Convert Hex number between byte, short, int, string
+---
 + #### Single Value <=> Array Value
 + #### Converted based on 32-bit number.
 + #### If the number exceeds 32 bits, the excess number is discarded.
