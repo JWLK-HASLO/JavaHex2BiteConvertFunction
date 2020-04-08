@@ -1,4 +1,4 @@
-JavaHex2BiteConvertFunction
+JavaHex2ByteConvertFunction
 ===
 Convert Hex number between byte, short, int, string
 ---
