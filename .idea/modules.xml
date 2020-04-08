@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JavaHex2BiteConvertFunction.iml" filepath="$PROJECT_DIR$/JavaHex2BiteConvertFunction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaHex2ByteConvertFunction.iml" filepath="$PROJECT_DIR$/JavaHex2ByteConvertFunction.iml" />
     </modules>
   </component>
 </project>
