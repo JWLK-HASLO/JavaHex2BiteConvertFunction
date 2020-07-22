@@ -16,12 +16,21 @@ public class Main {
 
         byte[] bytesArray = {(byte) 0xB1, 0x02, (byte) 0xA3, 0x04, (byte) 0xFF, 0x11, (byte) 0xEF, 0x4F};
 
+        int intValue = 10;
         String hexString = "9803CDEF9800000343";
         String[] hexStringArray = {"9803CDEF","98000003","96FF3322"};
 
+        /*Convert INT Value to Hex out print result*/
+        System.out.println("-------------------------------");
+        System.out.println("Origin Data : 10");
+        System.out.println("-------------------------------");
+        System.out.println("intTo4HexString");
+
+        System.out.printf(String.format("%s", intTo4HexString(10)));
+
 
         /*Convert Data System out print result*/
-        System.out.println("-------------------------------");
+        System.out.println("\n\n-------------------------------");
         System.out.println("Origin Data : 0xB102A304");
         System.out.println("-------------------------------");
         System.out.println("intToByteBuffer");
@@ -82,6 +91,25 @@ public class Main {
             System.out.printf("0x%04X ", ints);
         }
         System.out.println("\n-------------------------------");
+    }
+
+
+    /*
+     * int to 4hex Number : Example 10 => 000A
+     */
+
+    public static String intTo4HexString(int intValue) {
+
+        String result;
+
+        if(intValue < 65536 && intValue > 0){
+            result  = Integer.toHexString(0x10000 | intValue).substring(1).toUpperCase();
+        } else {
+            result = "error";
+        }
+
+
+        return result;
     }
 
 

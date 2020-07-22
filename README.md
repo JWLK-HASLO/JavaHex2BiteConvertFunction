@@ -9,6 +9,13 @@ Convert Hex number between byte, short, int, string
 <br>
 
 
+### 0. int Value (<65535)  => 4 hex Number 
+
+#### 0.0 intTo4HexString(int intValue) 
++ Origin Data : (int) 10
+> Result : 000A
+
+
 ### 1. int 32bit 8hex or short 16bit 4hex  => byte Array
 
 #### 1.1 byte[] intToByteBuffer(int intValue) 
