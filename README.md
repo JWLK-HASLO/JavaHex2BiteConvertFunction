@@ -28,6 +28,9 @@ Convert Hex number between byte, short, int, string
 <br>
 
 ### 2. byte Array => String or String Array
++ Origin Data : byte[] {0x00, 0x00, 0x00, 0x10}
+#### 2.0 String byteArrayToInt(byte[] bytes)
+> Result : 16
 + Origin Data : byte[] {0xB1, 0x02, 0xA3, 0x04, 0xFF, 0x11, 0xEF, 0x4F}
 #### 2.1 String byteArrayToHexString(byte[] bytes)
 > Result : 0xB102A304FF11EF4F

@@ -14,6 +14,7 @@ public class Main {
         short short16hex4_0 = (short) 0xB102;
         short short16hex4_1 = (short) 0xA304;
 
+        byte[] bytesArray4Byte = {0x00, 0x00, 0x00, 0x10};
         byte[] bytesArray = {(byte) 0xB1, 0x02, (byte) 0xA3, 0x04, (byte) 0xFF, 0x11, (byte) 0xEF, 0x4F};
 
         int intValue = 10;
@@ -46,6 +47,12 @@ public class Main {
         for(byte bytes : shortToByteBuffer(short16hex4_0, short16hex4_1)){
             System.out.printf("0x%02X ", bytes);
         }
+
+        System.out.println("\n\n-------------------------------");
+        System.out.println("Origin Data : {0xB1, 0x02, 0xA3, 0x04}");
+        System.out.println("-------------------------------");
+        System.out.println("byteArrayToInt");
+        System.out.println(String.format("%d", byteArrayToInt(bytesArray4Byte)));
 
         System.out.println("\n\n-------------------------------");
         System.out.println("Origin Data : {0xB1, 0x02, 0xA3, 0x04, 0xFF, 0x11, 0xEF, 0x4F}");
@@ -138,6 +145,13 @@ public class Main {
         buffer[3] = (byte) (data & 0x00ff);
 
         return buffer;
+    }
+
+    /*
+     * byte Array => int
+     */
+    public static int byteArrayToInt(byte[] bytes) {
+        return bytes[0] << 24 | (bytes[1] & 0xFF) << 16 | (bytes[2] & 0xFF) << 8 | (bytes[3] & 0xFF);
     }
 
     /*
