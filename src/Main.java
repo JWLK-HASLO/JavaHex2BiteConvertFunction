@@ -16,6 +16,7 @@ public class Main {
 
         byte[] bytesArray4Byte = {0x00, 0x00, 0x00, 0x10};
         byte[] bytesArray = {(byte) 0xB1, 0x02, (byte) 0xA3, 0x04, (byte) 0xFF, 0x11, (byte) 0xEF, 0x4F};
+//        byte[] bytesArray = {(byte) 0xB1, 0x02, (byte) 0xA3, 0x04, (byte) 0xFF, 0x11, (byte) 0xEF, 0x4F};
 
         int intValue = 10;
         String hexString = "9803CDEF9800000343";
@@ -49,7 +50,7 @@ public class Main {
         }
 
         System.out.println("\n\n-------------------------------");
-        System.out.println("Origin Data : {0xB1, 0x02, 0xA3, 0x04}");
+        System.out.println("Origin Data : {0x00, 0x00, 0x00, 0x10}");
         System.out.println("-------------------------------");
         System.out.println("byteArrayToInt");
         System.out.println(String.format("%d", byteArrayToInt(bytesArray4Byte)));
